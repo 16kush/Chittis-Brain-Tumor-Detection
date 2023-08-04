@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Nearby Hospitals</title>
+    <link href="styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="text-center py-3">
+        <h1>Find Nearby Hospitals for Brain Tumor Treatment</h1>
+    </header>
+
+    <nav class="text-center py-2">
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="\index.html">Home</a></li>
+            <li class="list-inline-item"><a href="\detection.html">Brain Tumor Detection</a></li>
+            <li class="list-inline-item"><a href="\brain_tumor_page.html">All About Brain Tumors</a></li>
+            <li class="list-inline-item"><a href="\map.html">Find Nearby Hospitals</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Nearby Hospitals</h2>
+        <div id="map"></div>
+    </main>
+
+    <footer class="text-center py-3">
+        <p>&copy; 2023 Chittis: Brain Tumor Detection. All rights reserved.</p>
+    </footer>
+
+    <!-- Add the Google Maps JavaScript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async
+        defer></script>
+    <script>
+        // Function to initialize the map
+        function initMap() {
+            // Define the map options
+            var mapOptions = {
+                center: { lat: 40.7128, lng: -74.0060 }, // New York City coordinates (you can change this to your location)
+                zoom: 12 // Set the initial zoom level
+            };
+
+            // Create the map
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+            // Define the nearby hospitals' locations and info
+            var nearbyHospitals = [
+                {
+                    name: "Hospital 1",
+                    address: "123 Main St, New York, NY",
+                    lat: 40.7128,
+                    lng: -74.0060
+                },
+                {
+                    name: "Hospital 2",
+                    address: "456 Maple Ave, New York, NY",
+                    lat: 40.7184,
+                    lng: -73.9948
+                },
+                // Add more hospitals here
+            ];
+
+            // Add markers for each nearby hospital
+            nearbyHospitals.forEach(function (hospital) {
+                var marker = new google.maps.Marker({
+                    position: { lat: hospital.lat, lng: hospital.lng },
+                    map: map,
+                    title: hospital.name
+                });
+
+                // Add info window for each marker
+                var infoWindow = new google.maps.InfoWindow({
+                    content: "<strong>" + hospital.name + "</strong><br>" + hospital.address
+                });
+
+                marker.addListener("click", function () {
+                    infoWindow.open(map, marker);
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

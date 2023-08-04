@@ -1,0 +1,119 @@
+/* Common CSS styles for all pages */
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    background-color: #f4f4f4;
+    padding: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+nav ul li a:hover {
+    color: #751127;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+main {
+    margin-top: 2rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    color: maroon;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 2rem;
+}
+
+footer {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+a {
+    color: maroon;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Additional styles for specific pages */
+
+/* styles for index.html */
+.index-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.index-section {
+    padding: 2rem;
+}
+
+.index-section h2 {
+    color: #007bff;
+}
+
+/* styles for detection.html */
+.detection-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.detection-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.detection-form input[type="file"] {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* styles for map.html */
+#map {
+    height: 400px;
+    width: 100%;
+}
