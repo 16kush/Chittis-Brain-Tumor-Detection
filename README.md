@@ -21,6 +21,7 @@ For Windows CPU (torch library):
 For production deployment:
 1. Configure a production WSGI server (e.g., Gunicorn, uWSGI, or mod_wsgi) to run the app. Example for Gunicorn: `gunicorn wsgi:app`
 2. The app will be accessible at `http://localhost:8000` (assuming Gunicorn is running on port 8000).
+3.  Run the app using: `python app.wsgi run`
 
 ## How the app works
 
